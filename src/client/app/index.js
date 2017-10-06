@@ -1,10 +1,15 @@
 import React from 'react';
 import {render} from 'react-dom';
 
+import LikesComponent from './LikesComponent';
+
 class App extends React.Component {
     render() {
         return (
-            <p>Hello React!</p>
+            <div>
+                <p>Hello React!</p>
+                <LikesComponent/>
+            </div>
         );
     }
 };
