@@ -7,6 +7,7 @@ class LikesComponent extends React.Component {
             likes: 0
         };
         this.onLike = this.onLike.bind(this);
+        this.onDislike = this.onDislike.bind(this);
     }
 
     render() {
@@ -15,6 +16,7 @@ class LikesComponent extends React.Component {
                 Likes: <span>{this.state.likes}</span>
                 <div>
                     <button onClick={this.onLike}>Like me</button>
+                    <button onClick={this.onDislike}>Dislike me</button>
                 </div>
             </div>
         );
@@ -22,6 +24,13 @@ class LikesComponent extends React.Component {
 
     onLike() {
         let newLikesCount = this.state.likes + 1;
+        this.setState({
+            likes: newLikesCount
+        });
+    }
+
+    onDislike() {
+        let newLikesCount = this.state.likes === 0 ? 0 : this.state.likes - 1;
         this.setState({
             likes: newLikesCount
         });
